@@ -1,6 +1,14 @@
 // Credentials
-const API_KEY = 'AIzaSyDS8RqhgXoEAz4eqgmESwA4p8i7H_EyJ10' 
+const API_KEY = '' // INSERT YOUR GOOGLE API KEY HERE
 const apiUrl = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`
+
+// If there's no API key, stop script execution
+if (!API_KEY) {
+  const errorMessage = 'Please, provide your google API key on the script.js file.'
+
+  alert(errorMessage)
+  throw new Error(errorMessage);
+}
 
 // Get char count of string
 const getCharCount = (str) => {
